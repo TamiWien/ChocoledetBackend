@@ -12,6 +12,7 @@ namespace App.DTO.Models
 
         public string VVVVVVVVVVVVVVVVVVV { get; set; } = null!;
         public string aaaaaaaaaaaaaaaaaaa { get; set; } = null!;
+        public string ggggggggggggggggggggggggggg { get; set; } = null!;
 
     }
 }
