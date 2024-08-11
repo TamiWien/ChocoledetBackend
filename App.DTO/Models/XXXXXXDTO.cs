@@ -8,9 +8,10 @@ namespace App.DTO.Models
 {
     public class CategoryDTO
     {
-        public int XXXXXXXXXXXXXXX { get; set; }
+        public string XXXXXXXXXXXXXXX { get; set; }
 
         public string VVVVVVVVVVVVVVVVVVV { get; set; } = null!;
+        public string aaaaaaaaaaaaaaaaaaa { get; set; } = null!;
 
     }
 }
