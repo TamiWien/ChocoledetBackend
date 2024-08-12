@@ -29,6 +29,5 @@ namespace App.BL.Services
         {
             return orders.CreateOrder(OrderMapper.Map(order));
         }
-        
     }
 }

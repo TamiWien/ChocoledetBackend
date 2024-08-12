@@ -19,6 +19,13 @@ namespace App.BL.Mappers
                 OrderDate = order.OrderDate,
                 TotalAmount=order.TotalAmount,
                 PaymentStatus = order.PaymentStatus,
+                OrderItems = order.OrderItems.Select(item => new OrderItem
+                {
+                    OrderItemId = item.OrderItemId,
+                    ProductId = item.ProductId,
+                    OrderId = item.OrderId,
+                    Quantity = item.Quantity
+                }).ToList()
             };
         }
         internal static OrderDTO Map(Order order)

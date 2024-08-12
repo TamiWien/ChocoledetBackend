@@ -21,10 +21,11 @@ namespace App.DAL.Repositories
             List<Order> orders = dbContext.Orders.Where(u => u.UserId == id).ToList();
             return orders;
         }
-
         public Guid CreateOrder(Order order)
         {
             dbContext.Orders.Add(order);
+            foreach (var item in order.OrderItems)
+              dbContext.OrderItems.Add(item);
             dbContext.SaveChanges();
             return order.OrderId;
         }
