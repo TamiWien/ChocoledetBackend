@@ -1,10 +1,6 @@
 ﻿using App.DAL.Entities;
 using App.DTO.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace App.BL.Mappers
 {
@@ -37,6 +33,13 @@ namespace App.BL.Mappers
                 OrderDate = order.OrderDate,
                 TotalAmount = order.TotalAmount,
                 PaymentStatus = order.PaymentStatus,
+                OrderItems = order.OrderItems.Select(item => new OrderItemDTO
+                {
+                    OrderItemId = item.OrderItemId,
+                    ProductId = item.ProductId,
+                    OrderId = item.OrderId,
+                    Quantity = item.Quantity
+                }).ToList()
             };
         }
     }

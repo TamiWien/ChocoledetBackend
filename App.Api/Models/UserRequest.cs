@@ -1,5 +1,4 @@
-﻿using App.DAL.Entities;
-
+﻿
 namespace App.Api.Models
 {
     public class UserRequest

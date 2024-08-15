@@ -1,7 +1,5 @@
 ﻿using App.BL.Interfaces;
-using App.DAL.Entities;
 using App.DTO.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace App.Api.Controllers

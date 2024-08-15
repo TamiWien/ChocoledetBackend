@@ -13,11 +13,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext <ChocoledetContext>(options =>
+
+builder.Services.AddDbContext<ChocoledetContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("sql"));
 });
-builder.Services.AddScoped<IUsersRepository,UsersRepository>();
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IOrdersRepository, OrdersRepository>();
 builder.Services.AddScoped<ICategoriesRepository, CategoriesRepository>();
 builder.Services.AddScoped<IOrdersItemsRepository, OrdersItemsRepository>();

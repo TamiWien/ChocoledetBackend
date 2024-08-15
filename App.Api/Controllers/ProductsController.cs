@@ -1,12 +1,8 @@
 ﻿using App.Api.Mappers;
 using App.Api.Models;
 using App.BL.Interfaces;
-using App.BL.Services;
-using App.DAL.Entities;
 using App.DTO.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace App.Api.Controllers
 {

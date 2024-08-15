@@ -1,5 +1,4 @@
 ﻿using App.Api.Models;
-using App.DAL.Entities;
 
 public class OrderRequest
 {

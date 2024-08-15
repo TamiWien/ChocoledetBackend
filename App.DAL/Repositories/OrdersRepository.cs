@@ -1,11 +1,8 @@
 ﻿using App.DAL.DataContext;
 using App.DAL.Entities;
 using App.DAL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace App.DAL.Repositories
 {
@@ -18,7 +15,7 @@ namespace App.DAL.Repositories
         }
         public List<Order> GetOrdersById(Guid id)
         {
-            List<Order> orders = dbContext.Orders.Where(u => u.UserId == id).ToList();
+            List<Order> orders = dbContext.Orders.Where(u => u.UserId == id).Include(o => o.OrderItems).ToList();
             return orders;
         }
         public Guid CreateOrder(Order order)
