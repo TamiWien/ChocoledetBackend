@@ -1,5 +1,6 @@
 ﻿using App.BL.Interfaces;
 using App.BL.Mappers;
+using App.DAL.Entities;
 using App.DAL.Interfaces;
 using App.DTO.Models;
 
@@ -13,9 +14,17 @@ namespace App.BL.Services
         {
             categories = categoriesRepository;
         }
-        public CategoryDTO GetCategoryById(int id)
+        public async Task<CategoryDTO> GetCategoryById(int id)
         {
-            return CategoryMapper.Map(categories.GetCategoryById(id));
+            try
+            {
+                var category = await categories.GetCategoryById(id);
+                return CategoryMapper.Map(category);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 
