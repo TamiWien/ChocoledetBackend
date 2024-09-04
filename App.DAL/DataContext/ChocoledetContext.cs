@@ -61,9 +61,9 @@ public partial class ChocoledetContext : DbContext
         modelBuilder.Entity<Product>(entity =>
         {
             entity.Property(e => e.ProductId).ValueGeneratedNever();
-            entity.Property(e => e.ImagePath).HasMaxLength(50);
+            entity.Property(e => e.ImagePath).HasMaxLength(100);
             entity.Property(e => e.ProductName)
-                .HasMaxLength(10)
+                .HasMaxLength(50)
                 .IsFixedLength();
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
@@ -80,6 +80,7 @@ public partial class ChocoledetContext : DbContext
             entity.Property(e => e.Password)
                 .HasMaxLength(10)
                 .IsFixedLength();
+            entity.Property(e => e.Phone).HasMaxLength(50);
             entity.Property(e => e.UserName)
                 .HasMaxLength(10)
                 .IsFixedLength();

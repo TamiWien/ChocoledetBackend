@@ -13,7 +13,7 @@ namespace App.DAL.Repositories
         {
             dbContext = chocoledetContext;
         }
-        public async Task<List<Order>> GetOrdersById(Guid id)
+        public async Task<List<Order>> GetOrdersByUserId(Guid id)
         {
             try
             {

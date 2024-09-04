@@ -14,6 +14,10 @@ namespace App.DTO.Models
 
         public DateTime CreatedAt { get; set; }
 
+        public bool IsDeleted { get; set; } = false;
+
+        public string? Phone { get; set; }
+
         public virtual ICollection<OrderDTO> Orders { get; set; } = new List<OrderDTO>();
     }
 }

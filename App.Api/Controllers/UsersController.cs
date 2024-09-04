@@ -55,7 +55,7 @@ namespace App.Api.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<Guid> UpdateUser(Guid id, [FromBody] UserRequest user)
         {
             try
@@ -81,5 +81,17 @@ namespace App.Api.Controllers
             }
         }
 
+        [HttpPost("login")]
+        public async Task<string> LoginUser(string email, string password)
+        {
+            try
+            {
+                return await _userService.LoginUser(email, password);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

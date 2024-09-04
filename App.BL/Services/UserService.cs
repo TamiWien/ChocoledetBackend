@@ -3,6 +3,7 @@ using App.BL.Mappers;
 using App.DAL.Entities;
 using App.DAL.Interfaces;
 using App.DTO.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace App.BL.Services
@@ -69,6 +70,18 @@ namespace App.BL.Services
             var newUserList = await users.DeleteUser(id);
             var userDTOList = newUserList.Select(u => UserMapper.Map(u)).ToList();
             return userDTOList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<string> LoginUser(string email, string password)
+        {
+            try
+            {
+                return await users.LoginUser(email, password);
             }
             catch (Exception ex)
             {
